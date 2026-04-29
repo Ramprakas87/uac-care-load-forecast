@@ -4,6 +4,9 @@ Data-driven predictive analytics dashboard forecasting UAC care load and placeme
 ## Dashboard link
 http://localhost:8502/
 
+## Research Paper Link
+https://zenodo.org/records/19567055
+
 ### Video link
 https://drive.google.com/file/d/14_Dht8-nIiDDTyLs5J_dbnqEzryFT9Bn/view?usp=drive_link
 
