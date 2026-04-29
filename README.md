@@ -2,7 +2,7 @@
 Data-driven predictive analytics dashboard forecasting UAC care load and placement demand. Uses SARIMA time-series models to enable proactive resource planning and early-warning alerts for HHS decision-makers.
 
 ## Dashboard link
-http://localhost:8501/
+http://localhost:8502/
 
 ### Video link
 https://drive.google.com/file/d/14_Dht8-nIiDDTyLs5J_dbnqEzryFT9Bn/view?usp=drive_link
@@ -23,7 +23,7 @@ A **data-driven predictive analytics dashboard** for forecasting Unaccompanied A
 
 ## 🚀 Quick Access
 
-**📊 [Care Load Forecast Dashboard - Live Demo](http://localhost:8501/)**
+**📊 [Care Load Forecast Dashboard - Live Demo](http://localhost:8502/)**
 
 *Replace the link above with your deployed Streamlit Cloud URL*
 
@@ -434,6 +434,6 @@ I’m always open to discussing **data science, forecasting models, and real-wor
 ---
 
 ### ⭐ Support
-If you found this project helpful, consider giving it a ⭐ on GitHub!
+If you found this project helpful, consider giving it a ⭐!
 ---
 
