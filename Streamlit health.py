@@ -169,6 +169,8 @@ filtered_df = filtered_df.dropna(subset=["Date"])
 filtered_df = filtered_df.set_index("Date")
 filtered_df.index = pd.to_datetime(filtered_df.index)
 
+print(filtered_df.columns)
+
 monthly = filtered_df.resample("MS").mean(numeric_only=True).reset_index()
 
 st.plotly_chart(style(px.line(monthly, x="Date", y="HHS_Care")), use_container_width=True)
