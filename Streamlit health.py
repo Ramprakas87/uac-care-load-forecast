@@ -212,7 +212,8 @@ if latest["Daily_Change"] > 1000:
 st.subheader("📈 Forecast")
 
 ts = df.set_index("Date")["HHS_Care"]
-ts_monthly = ts.resample("M").mean()
+ts.index = pd.to_datetime(ts.index)
+ts_monthly = ts.resample("MS").mean()
 
 model = SARIMAX(ts_monthly, order=(1,1,1), seasonal_order=(1,1,1,12))
 results = model.fit()
