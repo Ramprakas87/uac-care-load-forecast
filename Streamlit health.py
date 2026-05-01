@@ -167,7 +167,7 @@ filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
 filtered_df = filtered_df.dropna(subset=["date"])
 
 filtered_df = filtered_df.set_index("date")
-
+st.write(filtered_df.columns)
 monthly = filtered_df.resample("MS").mean(numeric_only=True).reset_index()
 
 print(filtered_df.columns)
