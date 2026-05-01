@@ -159,15 +159,16 @@ filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce")
 filtered_df = filtered_df.dropna(subset=["Date"])
 
 filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce")
-filtered_df = filtered_df.dropna(subset=["Date"])
+# 👇 TEMP: column names dekhne ke liye
+print(filtered_df.columns)
 
-filtered_df = filtered_df.set_index("Date")
+# 👇 IMPORTANT: yahan "date" ko baad me actual column naam se replace karna
+filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
+filtered_df = filtered_df.dropna(subset=["date"])
 
-filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce")
-filtered_df = filtered_df.dropna(subset=["Date"])
+filtered_df = filtered_df.set_index("date")
 
-filtered_df = filtered_df.set_index("Date")
-filtered_df.index = pd.to_datetime(filtered_df.index)
+monthly = filtered_df.resample("MS").mean(numeric_only=True).reset_index()
 
 print(filtered_df.columns)
 
