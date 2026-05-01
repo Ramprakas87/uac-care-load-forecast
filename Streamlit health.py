@@ -154,6 +154,10 @@ st.plotly_chart(style(px.line(filtered_df, x="Date", y=["CBP_Custody","HHS_Care"
 
 st.markdown("### 4️⃣ Monthly Average Care Load")
 st.markdown("*Long-term trend analysis with monthly aggregation - identifies seasonal patterns*")
+
+filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce")
+filtered_df = filtered_df.dropna(subset=["Date"])
+
 monthly = filtered_df.resample("M", on="Date").mean(numeric_only=True).reset_index()
 st.plotly_chart(style(px.line(monthly, x="Date", y="HHS_Care")), use_container_width=True)
 
