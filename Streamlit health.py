@@ -155,25 +155,13 @@ st.plotly_chart(style(px.line(filtered_df, x="Date", y=["CBP_Custody","HHS_Care"
 st.markdown("### 4️⃣ Monthly Average Care Load")
 st.markdown("*Long-term trend analysis with monthly aggregation - identifies seasonal patterns*")
 
-filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce")
-filtered_df = filtered_df.dropna(subset=["Date"])
-
-filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce")
-# 👇 TEMP: column names dekhne ke liye
-print(filtered_df.columns)
-
-# 👇 IMPORTANT: yahan "date" ko baad me actual column naam se replace karna
-filtered_df["date"] = pd.to_datetime(filtered_df["date"], errors="coerce")
-filtered_df = filtered_df.dropna(subset=["date"])
-
-filtered_df = filtered_df.set_index("date")
-st.write(filtered_df.columns)
-monthly = filtered_df.resample("MS").mean(numeric_only=True).reset_index()
-
-print(filtered_df.columns)
-
-monthly = filtered_df.resample("MS").mean(numeric_only=True).reset_index()
-
+monthly = (
+    filtered_df
+    .set_index("Date")
+    .resample("MS")
+    .mean(numeric_only=True)
+    .reset_index()
+)
 st.plotly_chart(style(px.line(monthly, x="Date", y="HHS_Care")), use_container_width=True)
 
 st.markdown("### 5️⃣ Care Load Distribution")
