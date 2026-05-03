@@ -28,8 +28,6 @@ A **data-driven predictive analytics dashboard** for forecasting Unaccompanied A
 
 **📊 [Care Load Forecast Dashboard - Live Demo](https://uac-care-load-forecast-ruvgu6nktlmmvgskmseuyh.streamlit.app/)**
 
-*Replace the link above with your deployed Streamlit Cloud URL*
-
 ---
 
 ## 🔴 The Problem
